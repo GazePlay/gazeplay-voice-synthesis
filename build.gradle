@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'net.gazeplay'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+application.mainClassName = 'net.gazeplay.SynthesisTask'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.amazonaws:aws-java-sdk-polly:1.11.737'
+    implementation 'org.awaitility:awaitility:4.0.2'
+    implementation 'com.opencsv:opencsv:5.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+}
