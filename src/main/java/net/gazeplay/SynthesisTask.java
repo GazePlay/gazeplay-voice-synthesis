@@ -46,13 +46,13 @@ public class SynthesisTask {
                     String language = languages[i - 1];
                     String message = row[i];
 
-                    String fileKeyF = String.format("%s.f.%s", name, voices.get(language).getLeft());
+                    String fileKeyW = String.format("%s.w.%s", name, voices.get(language).getLeft());
                     String fileKeyM = String.format("%s.m.%s", name, voices.get(language).getLeft());
 
-                    polly.synthesizeSpeech(message, fileKeyF, voices.get(language).getRight().getRight());
+                    polly.synthesizeSpeech(message, fileKeyW, voices.get(language).getRight().getRight());
                     polly.synthesizeSpeech(message, fileKeyM, voices.get(language).getRight().getLeft());
 
-                    System.out.println(String.format("Submitted voices for %s and %s", fileKeyF, fileKeyM));
+                    System.out.println(String.format("Submitted voices for %s and %s", fileKeyW, fileKeyM));
                 }
             }
         } catch (Exception e) {
