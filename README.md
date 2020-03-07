@@ -32,3 +32,17 @@ moving onto the next. This is to ensure rate limiting, and that you don't incur 
 The sounds will reside in the root of your chosen bucket. They will have the correct GazePlay compatible name, except 
 for a unique identifier at the end of the filename. You should download all the files after they have been generated
 and remove this identifier. They will then be ready for inclusion in GazePlay.
+
+You can download the contents of a bucket to a local folder using the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+command `aws s3 sync s3://gazeplay-voice-bucket ./gazeplay-voices`.
+
+Here is a handy python script to quickly rename all the files you download:
+```python
+import os
+
+for file in os.listdir('gazeplay-voices'):
+    parts = file.split('.')
+    name = parts[0] + '.' + parts[1] + '.' + parts[2] + '.' + parts[4]
+    print(name)
+    os.rename('gazeplay-voices/' + file, 'gazeplay-voices/' + name)
+```

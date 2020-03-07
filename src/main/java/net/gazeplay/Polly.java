@@ -12,9 +12,9 @@ import static org.awaitility.Awaitility.await;
 public class Polly {
 
     private static final String OUTPUT_FORMAT_MP3 = OutputFormat.Mp3.toString();
-    private static final long SYNTHESIS_TASK_POLL_INTERVAL = 2000;
-    private static final long SYNTHESIS_TASK_POLL_DELAY = 2000;
-    private static final int SYNTHESIS_TASK_TIMEOUT_SECONDS = 300;
+    private static final long SYNTHESIS_TASK_POLL_INTERVAL = 500;
+    private static final long SYNTHESIS_TASK_POLL_DELAY = 1000;
+    private static final int SYNTHESIS_TASK_TIMEOUT_SECONDS = 30;
 
     private AmazonPolly client;
     private String outputBucket;
